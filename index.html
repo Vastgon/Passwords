@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEPHYR - Passwords</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Agrega estilos CSS personalizados aquí si es necesario */
+    </style>
+</head>
+<body>
+    <div class="geometric-background">
+        <!-- Figuras geométricas -->
+        <div class="square one"></div>
+        <div class="square two"></div>
+    </div>
+
+    <div id="root">
+        <!-- Contenido principal -->
+        <header>
+            <h1 class="titulo">HYDRANIX</h1>
+        </header>
+
+        <main>
+            <section class="contenedor-botones">
+                <button id="boton-generar" class="boton" onclick="generarContraseña()">Generar contraseña</button>
+                <button id="boton-copiar" class="boton" onclick="copiarContraseña()">Copiar contraseña</button>
+            </section>
+
+            <section class="slider-container">
+                <label for="longitud-contraseña">Longitud de la contraseña:</label>
+                <input type="range" id="longitud-contraseña" class="slider" min="20" max="33000" value="1000" oninput="actualizarLongitud()">
+                <span id="longitud-contraseña-texto" class="longitud-contraseña-texto">1000</span>
+            </section>
+
+            <section id="contraseña-generada" class="contraseña">
+                <h2>Contraseña Generada:</h2>
+                <textarea id="contraseña-texto" rows="3" readonly></textarea>
+                <button id="boton-guardar" class="boton-guardar" onclick="guardarContraseña()">Guardar contraseña</button>
+            </section>
+
+            <section class="fortaleza-contraseña">
+                <h2>Fortaleza de la Contraseña:</h2>
+                <div id="fortaleza-contraseña"></div>
+            </section>
+
+            <section class="alfabeto">
+                <fieldset>
+                    <legend>Seleccione los tipos de caracteres:</legend>
+                    <label><input type="checkbox" id="ascii" onchange="deseleccionarTodos()">ASCII</label>
+                    <label><input type="checkbox" id="cirílico" onchange="deseleccionarTodos()">Cirílico</label>
+                    <label><input type="checkbox" id="griego" onchange="deseleccionarTodos()">Griego</label>
+                    <label><input type="checkbox" id="hebreo" onchange="deseleccionarTodos()">Hebreo</label>
+                    <label><input type="checkbox" id="árabe" onchange="deseleccionarTodos()">Árabe</label>
+                    <label><input type="checkbox" id="devanagari" onchange="deseleccionarTodos()">Devanagari</label>
+                    <label><input type="checkbox" id="hiragana" onchange="deseleccionarTodos()">Hiragana</label>
+                    <label><input type="checkbox" id="katakana" onchange="deseleccionarTodos()">Katakana</label>
+                    <label><input type="checkbox" id="tamil" onchange="deseleccionarTodos()">Tamil</label>
+                    <label><input type="checkbox" id="todos" onchange="seleccionarTodos()">Todos</label>
+                </fieldset>
+            </section>
+        </main>
+    </div>
+
+    <footer style="text-align: center;">
+        <p>&copy; 2024 ZEPHYR. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            generarContraseña(); // Generar una contraseña automáticamente al cargar la página
+        }
+    </script>
+</body>
+</html>

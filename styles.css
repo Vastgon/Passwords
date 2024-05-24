@@ -1,0 +1,268 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f3f0; /* Fondo beige claro */
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+    position: relative;
+}
+
+/* Fondo geométrico */
+.geometric-background {
+    position: fixed; /* Cambiado de absolute a fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.geometric-background .square {
+    position: absolute;
+    background: rgba(93, 64, 55, 0.2); /* Marrón claro con transparencia */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.square.one {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 30%;
+    animation: moveSquare 20s linear infinite;
+}
+
+.square.two {
+    width: 150px;
+    height: 150px;
+    top: 70%;
+    left: 60%;
+    animation: moveSquare 25s linear infinite reverse;
+}
+
+/* Animaciones para las figuras */
+@keyframes moveSquare {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(50px, 50px) rotate(180deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+/* Contenedor principal */
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+/* Panel circular */
+.panel-circular {
+    width: 400px;
+    height: auto;
+    background: linear-gradient(to bottom right, #c6bdb6, #e1d8d4); /* Tonalidades de beige */
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título */
+.titulo {
+    font-size: 48px;
+    color: #3e2723; /* Marrón oscuro */
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Contenedor de botones */
+.contenedor-botones {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Botones */
+.boton {
+    padding: 12px 24px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #5d4037; /* Marrón */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+}
+
+.boton:hover {
+    background-color: #6d4c41; /* Marrón más claro */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor del deslizador */
+.slider-container {
+    width: 80%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Deslizador */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    max-width: 1000px; /* Ancho fijo para el deslizador */
+    height: 15px;
+    border-radius: 10px;
+    background: #d7ccc8;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #5d4037; /* Marrón */
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #5d4037; /* Marrón */
+    cursor: pointer;
+}
+
+/* Texto de longitud de contraseña */
+.longitud-contraseña-texto {
+    font-size: 18px;
+    color: #3e2723; /* Marrón oscuro */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 10px;
+    min-width: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contraseña {
+    position: relative; /* Para posicionar de forma relativa */
+    left: 50%; /* Mueve la contraseña hacia la mitad del ancho del contenedor */
+    transform: translateX(-50%); /* Corrige la posición para que el centro de la contraseña esté alineado horizontalmente */
+    font-size: 20px;
+    color: #3e2723; /* Marrón oscuro */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Reduce el margen inferior */
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px; /* Ancho máximo */
+    width: calc(100% - 40px); /* Toma el 100% del ancho del contenedor menos el padding horizontal */
+    overflow-wrap: break-word;
+}
+
+/* Alfabeto */
+.alfabeto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.alfabeto label {
+    margin-right: 15px;
+    margin-bottom: 10px;
+    color: #3e2723; /* Marrón oscuro */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.alfabeto label:hover {
+    transform: scale(1.1);
+}
+
+.alfabeto input[type="checkbox"] {
+    display: none;
+}
+
+.alfabeto label::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #5d4037; /* Marrón */
+    border-radius: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.alfabeto input[type="checkbox"]:checked + label::before {
+    background-color: #6d4c41; /* Marrón más claro */
+    border: 2px solid #3e2723; /* Marrón oscuro */
+    transform: scale(1.1);
+}
+
+/* Opciones seleccionadas */
+.alfabeto input[type="checkbox"]:checked + label {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos existentes */
+.alfabeto {
+    border: 2px solid #3e2723; /* Marrón oscuro */
+    transform: scale(1.1);
+}
+
+.alfabeto input[type="checkbox"]:checked + label {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
