@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TYDRANIX - Passwords</title>
+    <title>APEXION1 - Passwords</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Agrega estilos CSS personalizados aquí si es necesario */
@@ -11,21 +11,20 @@
 </head>
 <body>
     <div class="geometric-background">
-        <!-- Figuras geométricas -->
-        <div class="square one"></div>
-        <div class="square two"></div>
+        <div class="shape circle"></div>
+        <div class="shape square"></div>
+        <div class="shape triangle"></div>
     </div>
 
     <div id="root">
-        <!-- Contenido principal -->
         <header>
-            <h1 class="titulo">TYDRANIX</h1>
+            <h1 class="titulo">APEXION1</h1>
         </header>
 
-        <main>
+        <main class="panel-principal">
             <section class="contenedor-botones">
-                <button id="boton-generar" class="boton" onclick="generarContraseña()">Generar contraseña</button>
-                <button id="boton-copiar" class="boton" onclick="copiarContraseña()">Copiar contraseña</button>
+                <button id="boton-generar" class="boton boton-primario" onclick="generarContraseña()">Generar contraseña</button>
+                <button id="boton-copiar" class="boton boton-secundario" onclick="copiarContraseña()">Copiar contraseña</button>
             </section>
 
             <section class="slider-container">
@@ -37,7 +36,6 @@
             <section id="contraseña-generada" class="contraseña">
                 <h2>Contraseña Generada:</h2>
                 <textarea id="contraseña-texto" rows="3" readonly></textarea>
-                <button id="boton-guardar" class="boton-guardar" onclick="guardarContraseña()">Guardar contraseña</button>
             </section>
 
             <section class="fortaleza-contraseña">
@@ -57,14 +55,17 @@
                     <label><input type="checkbox" id="hiragana" onchange="deseleccionarTodos()">Hiragana</label>
                     <label><input type="checkbox" id="katakana" onchange="deseleccionarTodos()">Katakana</label>
                     <label><input type="checkbox" id="tamil" onchange="deseleccionarTodos()">Tamil</label>
+                    <label><input type="checkbox" id="chino" onchange="deseleccionarTodos()">Chino</label>
+                    <label><input type="checkbox" id="coreano" onchange="deseleccionarTodos()">Coreano</label>
+                    <label><input type="checkbox" id="tailandés" onchange="deseleccionarTodos()">Tailandés</label>
                     <label><input type="checkbox" id="todos" onchange="seleccionarTodos()">Todos</label>
                 </fieldset>
             </section>
         </main>
     </div>
 
-    <footer style="text-align: center;">
-        <p>&copy; 2024 TYDRANIX. Todos los derechos reservados.</p>
+    <footer>
+        <p>&copy; 2024 APEXION1. Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
